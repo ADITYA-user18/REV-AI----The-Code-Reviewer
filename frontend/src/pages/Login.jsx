@@ -8,7 +8,7 @@ const Login = () => {
     const CLIENT_ID = import.meta.env.VITE_GITHUB_CLIENT_ID;
     
     // 2. Define where GitHub should send the user back
-    const REDIRECT_URI = "http://localhost:5173/auth/callback"; 
+    const REDIRECT_URI = `${window.location.origin}/auth/callback`;
 
     // 3. Redirect to GitHub Auth Page
     window.location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=repo,read:user&redirect_uri=${REDIRECT_URI}`;
