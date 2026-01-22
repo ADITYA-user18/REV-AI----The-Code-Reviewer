@@ -56,7 +56,7 @@ const Home = () => {
         </nav>
 
         {/* 2. HERO SECTION */}
-        <header className="pt-20 pb-32 px-6 text-center max-w-5xl mx-auto">
+        <header className="pt-20 pb-32 px-4 md:px-6 text-center max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,41 +66,44 @@ const Home = () => {
               🚀 v1.0 is now live for Developers
             </div>
 
-            {/* --- FULL SHUFFLE TEXT INTEGRATION --- */}
+            {/* --- FULL SHUFFLE TEXT INTEGRATION (RESPONSIVE FIX) --- */}
             <h1
               className="
-    text-5xl md:text-7xl
-    font-extrabold
-    text-gray-200
-    leading-[1.05]
-    tracking-tight
-    font-mono
-    drop-shadow-xl
-    text-center
-    space-y-2
-  "
+                text-3xl sm:text-5xl md:text-7xl lg:text-8xl 
+                font-extrabold
+                text-gray-200
+                leading-tight md:leading-[1.05]
+                tracking-tight
+                font-mono
+                drop-shadow-xl
+                text-center
+                space-y-3 md:space-y-2
+                w-full
+                max-w-[100vw]
+                overflow-hidden
+              "
             >
               {/* LINE 1 */}
-              <div className="flex justify-center whitespace-nowrap">
+              <div className="flex justify-center flex-wrap md:whitespace-nowrap px-2">
                 <Shuffle
                   text="STOP PUSHING BUGS"
                   tag="span"
                   shuffleTimes={3}
                   className="
-        inline-block
-        text-white
-        leading-none
-        text-transparent
-        bg-clip-text
-        bg-gradient-to-r
-        from-neon-purple
-        to-neon-blue
-      "
+                    inline-block
+                    text-white
+                    leading-none
+                    text-transparent
+                    bg-clip-text
+                    bg-gradient-to-r
+                    from-neon-purple
+                    to-neon-blue
+                  "
                 />
               </div>
 
               {/* LINE 2 */}
-              <div className="flex justify-center whitespace-nowrap">
+              <div className="flex justify-center flex-wrap md:whitespace-nowrap px-2">
                 <Shuffle
                   text="START SHIPPING"
                   tag="span"
@@ -110,17 +113,17 @@ const Home = () => {
               </div>
 
               {/* LINE 3 */}
-              <div className="flex justify-center whitespace-nowrap">
+              <div className="flex justify-center flex-wrap md:whitespace-nowrap px-2">
                 <Shuffle
                   text="INTELLIGENCE."
                   tag="span"
                   shuffleTimes={6}
-                  className="inline-block leading-none text-white"
+                  className="inline-block leading-none text-white break-words"
                 />
               </div>
             </h1>
 
-            <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto bg-github-dark/40 backdrop-blur-sm p-4 rounded-xl border border-white/5">
+            <p className="text-sm md:text-lg text-gray-400 mb-10 mt-8 max-w-2xl mx-auto bg-github-dark/40 backdrop-blur-sm p-4 rounded-xl border border-white/5">
               Your personal AI Code Reviewer. It watches your GitHub
               repositories, analyzes every push, and catches security risks
               <span className="text-white font-bold"> before</span> deployment.
@@ -128,7 +131,7 @@ const Home = () => {
 
             <Link
               to="/login"
-              className="inline-flex items-center gap-3 bg-neon-green hover:bg-green-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 shadow-[0_0_30px_rgba(35,134,54,0.4)]"
+              className="inline-flex items-center gap-3 bg-neon-green hover:bg-green-600 text-white px-6 py-3 md:px-8 md:py-4 rounded-xl font-bold text-md md:text-lg transition-all hover:scale-105 shadow-[0_0_30px_rgba(35,134,54,0.4)]"
             >
               <FaGithub className="text-xl" />
               Connect GitHub Account
