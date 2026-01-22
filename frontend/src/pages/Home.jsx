@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Particles from "../components/Particles";
-import Shuffle from "../components/Shuffle";
+import Shuffle from "../components/Shuffle"; // Import the Shuffle Component
 
 const Home = () => {
   return (
@@ -66,37 +66,33 @@ const Home = () => {
               🚀 v1.0 is now live for Developers
             </div>
 
-            {/* --- RESPONSIVE FIX FOR TEXT --- */}
-            {/* Changed from text-5xl to text-3xl/4xl for mobile to fit "INTELLIGENCE" */}
+            {/* --- FULL SHUFFLE TEXT INTEGRATION (RESPONSIVE FIX) --- */}
             <h1
               className="
-                text-3xl sm:text-4xl md:text-6xl lg:text-7xl 
+                text-3xl sm:text-5xl md:text-7xl lg:text-8xl 
                 font-extrabold
                 text-gray-200
-                leading-tight md:leading-[1.1]
+                leading-tight md:leading-[1.05]
                 tracking-tight
                 font-mono
                 drop-shadow-xl
                 text-center
-                space-y-2
+                space-y-3 md:space-y-2
                 w-full
+                max-w-[100vw]
                 overflow-hidden
               "
             >
               {/* LINE 1 */}
-              <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+              <div className="flex justify-center flex-wrap md:whitespace-nowrap px-2">
                 <Shuffle
-                  text="STOP PUSHING"
-                  tag="span"
-                  shuffleTimes={3}
-                  className="inline-block text-white"
-                />
-                <Shuffle
-                  text="BUGS"
+                  text="STOP PUSHING BUGS"
                   tag="span"
                   shuffleTimes={3}
                   className="
                     inline-block
+                    text-white
+                    leading-none
                     text-transparent
                     bg-clip-text
                     bg-gradient-to-r
@@ -107,22 +103,22 @@ const Home = () => {
               </div>
 
               {/* LINE 2 */}
-              <div className="flex flex-wrap justify-center gap-2 md:gap-4">
+              <div className="flex justify-center flex-wrap md:whitespace-nowrap px-2">
                 <Shuffle
                   text="START SHIPPING"
                   tag="span"
                   shuffleTimes={3}
-                  className="inline-block text-white"
+                  className="inline-block leading-none text-white"
                 />
               </div>
 
-              {/* LINE 3 - The Long Word */}
-              <div className="flex justify-center">
+              {/* LINE 3 */}
+              <div className="flex justify-center flex-wrap md:whitespace-nowrap px-2">
                 <Shuffle
                   text="INTELLIGENCE."
                   tag="span"
                   shuffleTimes={6}
-                  className="inline-block text-white break-all sm:break-normal"
+                  className="inline-block leading-none text-white break-words"
                 />
               </div>
             </h1>
